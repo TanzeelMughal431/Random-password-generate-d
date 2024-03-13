@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random pass genrated</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Genrated a <br /><span>Random Password </span></h1>
+      <div class="display">
+        <input type="text" name="" placeholder="Password" id="Password" />
+        <a onclick="copypass()" href="">Copy </a>
+      </div>
+
+      <button onclick="genratedpass()"><span>X </span>Genrate Password</button>
+    </div>
+  </body>
+  <script>
+    event.preventDefault();
+    function genratedpass() {
+      let Password = "";
+      const str = "124Abcdef&%#";
+      for (let i = 0; i <= 8; i++) {
+        Password += str.charAt(Math.floor(Math.random() * str.length + 1));
+        // console.log(Password);
+      }
+      let inppt = document.getElementById("Password");
+      inppt.value = Password;
+    }
+    function copypass() {
+      let passbox = document.getElementsBy("Password");
+      passbox.select();
+      document.execCommand("copy");
+    }
+  </script>
+</html>
