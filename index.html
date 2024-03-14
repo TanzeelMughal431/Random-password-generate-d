@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="password.png" type="image/x-icon" />
     <title>Random pass genrated</title>
     <link
       rel="stylesheet"
@@ -39,12 +40,14 @@
     }
     function copypass() {
       let passbox = document.getElementById("Password");
-      navigator.clipboard.writeText(passbox.value).then(() => {
-        alert("Password copied");
-      }).catch(err => {
-        console.error('Error copying text: ', err);
-      });
+      navigator.clipboard
+        .writeText(passbox.value)
+        .then(() => {
+          alert("Password copied");
+        })
+        .catch((err) => {
+          console.error("Error copying text: ", err);
+        });
     }
-    
   </script>
 </html>
