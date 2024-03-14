@@ -40,7 +40,7 @@
     function copypass() {
       let passbox = document.getElementById("Password");
       navigator.clipboard.writeText(passbox.value).then(() => {
-        alert("Password copied to clipboard!");
+        alert("Password copied");
       }).catch(err => {
         console.error('Error copying text: ', err);
       });
