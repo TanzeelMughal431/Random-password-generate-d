@@ -38,11 +38,12 @@
       inppt.value = Password;
     }
     function copypass() {
-      event.preventDefault();
-      alert("click i tag");
-      let passbox = document.getElementsBy("Password");
-      passbox.select();
-      document.execCommand("copy");
+      let passbox = document.getElementById("Password");
+      navigator.clipboard.writeText(passbox.value).then(() => {
+        alert("Password copied to clipboard!");
+      }).catch(err => {
+        console.error('Error copying text: ', err);
+      });
     }
     
   </script>
